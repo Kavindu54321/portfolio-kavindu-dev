@@ -21,7 +21,7 @@ function Aboutme() {
       >
         {/* Profile Photo */}
         <img 
-          src="/profile.jpg" 
+          src="/new.png" 
           alt="Profile Photo" 
           className='w-32 h-32 rounded-full shadow-lg mb-6 border-4 border-purple-500'
         />
