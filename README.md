@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <h3><b>Tajul Afreen Portfolio </b></h3>
+  <h3><b>Kavindu Dananjaya Portfolio </b></h3>
 
 </div>
 
@@ -59,7 +59,7 @@ This is the details of how to get in touch with the developer.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Go to Live site](https://tajul-afreen-portfolio.vercel.app/)
+- [Go to Live site](https://portfolio-kavindu-dev.vercel.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -147,11 +147,11 @@ Github Pages:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Tajul Afreen**
+👤 **kavindu dananjaya**
 
-- GitHub: [@Tajul Afreen](https://github.com/tajulafreen)
-- Twitter: [@Tajul Afreen](https://twitter.com/tajulafreen)
-- LinkedIn: [@Tajul Afreen](https://www.linkedin.com/in/tajul-afreen)
+- GitHub: [@kavindu dananjaya](https://github.com/tajulafreen)
+- Twitter: [@kavindu dananjaya](https://twitter.com/tajulafreen)
+- LinkedIn: [@kavindu dananjaya](https://www.linkedin.com/in/tajul-afreen)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

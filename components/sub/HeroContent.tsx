@@ -47,7 +47,7 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="md:text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          Hi there, I&apos;m <b className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 text-xl ">Tajul Afreen</b>, a Full Stack Software Developer with experience in Website,
+          Hi there, I&apos;m <b className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 text-xl ">Kavindu Dananjaya</b>, a Full Stack Software Developer with experience in Website,
            Mobile, and Software development. Please check out my projects and skills.
         </motion.p>
         <motion.div
