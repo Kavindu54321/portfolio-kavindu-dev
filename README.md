@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <h3><b>Tajul Afreen Portfolio </b></h3>
+  <h3><b>Kavindu Dananjaya Portfolio </b></h3>
 
 </div>
 
@@ -19,9 +19,9 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📖 [Tajul-Afreen-Portfolio] <a name="about-project"></a>
+# 📖 [portfolio-kavindu-dev] <a name="about-project"></a>
 
-**Tajul Afreen Portfolio** is a responsive web portfolio application where a developer can keep record of their previous projects, accoplishments, skills, contacts and CV to make it easier for them to display and present their developer talents.
+**portfolio-kavindu-dev** is a responsive web portfolio application where a developer can keep record of their previous projects, accoplishments, skills, contacts and CV to make it easier for them to display and present their developer talents.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -59,7 +59,7 @@ This is the details of how to get in touch with the developer.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Go to Live site](https://tajul-afreen-portfolio.vercel.app/)
+- [Go to Live site](https://portfolio-kavindu-dev.vercel.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -147,11 +147,11 @@ Github Pages:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Tajul Afreen**
+👤 **Kavindu Dananjaya**
 
-- GitHub: [@Tajul Afreen](https://github.com/tajulafreen)
-- Twitter: [@Tajul Afreen](https://twitter.com/tajulafreen)
-- LinkedIn: [@Tajul Afreen](https://www.linkedin.com/in/tajul-afreen)
+- GitHub: [@Kavindu](https://github.com/Kavindu54321)
+- Twitter: [@kavindu]()
+- LinkedIn: [@Kavindu](https://www.linkedin.com/in/kavindu-dananjaya-197b68233/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
