@@ -1,77 +1,137 @@
-"use client"
-import React, { useRef, useState } from 'react';
-import emailjs from 'emailjs-com';
-import { Toaster, toast} from 'sonner';
+"use client";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import Swal from "sweetalert2";
+import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 
-interface ContactProps {
-  visible: boolean;
-}
-const ContactForm: React.FC<ContactProps> = ({ visible }) => {
-  const form = useRef<HTMLFormElement>(null);
-  const contactStyle = {
-        zIndex: visible ? 0 : 20, // Set z-index based on visibility
-      };
+export default function Contact() {
+  const [loading, setLoading] = useState(false);
 
-
-  
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    if (form && form.current) {
-      emailjs.sendForm('service_2svnepu', 'template_vmeyoep', form.current, 'N27zaoCMdknIVor8g')
-        .then((result: { text: any; }) => {
-            toast(<div>Thanks for contacting! Your message has been sent.</div>); 
-          console.log(result.text);
-          if (form && form.current) {
-            form.current.reset(); // Reset the form after successful submission
-          }
-        })
-        .catch((error: { text: any; }) => {
-            toast(<div>An error occurred while sending your message.</div>); // Show error message using toaster
-            e.preventDefault
-        });
-    }
+  async function handleSubmit(event) {
+    event.preventDefault();
+    setLoading(true);
     
-  };
+    const formData = new FormData(event.target);
+    formData.append("access_key", "a5fc27ac-8902-41ec-964c-b2206218864f");
+
+    const json = JSON.stringify(Object.fromEntries(formData));
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: json,
+      });
+
+      const result = await response.json();
+      setLoading(false);
+
+      if (result.success) {
+        Swal.fire("Success!", "Your message has been sent.", "success");
+        event.target.reset();
+      } else {
+        Swal.fire("Error!", "Submission failed. Try again.", "error");
+      }
+    } catch (error) {
+      setLoading(false);
+      Swal.fire("Network Error!", "Check your connection and retry.", "error");
+    }
+  }
 
   return (
-    <div className='h-[20%] px-[5%] z-[20] isolate flex flex-col mb-[-7%]  md:py-[5%]'
-    style={contactStyle} 
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-screen flex flex-col items-center justify-center text-white px-6 py-12"
     >
-        <h1 className="text-[40px]  text-center font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-9">Contact Me</h1>
-    <div className='flex flex-col md:flex-row gap-9 justify-evenly items-center' id='contact'>
-        <div className='md:w-[40%] w-[80%] flex flex-col'>
-            <p className='text-gray-200 text-[24px]'>&quot;Have a thrilling project on your mind? Let&apos;s turn it into reality together!</p>
-            <br></br>
-            <p className='text-gray-200 text-[22px]'>I&apos;m passionate about diving into fresh concepts and bringing them to life. If you&apos;re looking for someone enthusiastic to collaborate on your project, I&apos;m all ears! Don&apos;t hesitate to reach out; I&apos;d love to explore your ideas and discuss how we can make them flourish.&quot;</p>
-        </div>
-        <div className='py-[25px] px-[3%]  h-[550px] w-[80%] md:w-[40%] rounded-2xl'>
-    <form ref={form} onSubmit={sendEmail} >
-        <ul className='flex flex-col gap-8'>
-       <li className='flex flex-col'>    
-      
-      <input type="text" name="from_name" className='w-full rounded-2xl h-[50px] p-2 invalid:border-pink-500 invalid:text-pink-600 border' placeholder='Name' maxLength={30} minLength={3} required />
-      </li> 
-      <li className='flex flex-col'> 
-      
-      <input type="email" name="from_email"  className='w-full rounded-2xl h-[50px] p-2 invalid:border-pink-500 invalid:text-pink-600' placeholder='Email' required/>
-      </li> 
-      <li className='flex flex-col'> 
-      
-      <textarea name="message"  className='w-full rounded-2xl md:h-[200px] h-[150px] p-2 invalid:border-pink-500 invalid:text-pink-600' placeholder='Message' maxLength={500} minLength={10} required/>
-      </li> 
-      <li className='text-right'> 
-        <button className='p-3 w-[150px] border border-[#2A0E61] button-primary  rounded-2xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110'>
-      <input type="submit" value="Send" className='text-gray-200 text-[18px]'/>
-      </button>
-      </li> 
-      </ul>
-    </form>
-    </div>
-    </div>
-    <Toaster closeButton />
-    </div>
-  );
-};
+      <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 text-center mb-6">Contact With Me</h1>
+      <p className="text-gray-300 text-lg text-center max-w-2xl mb-12">
+      If you have any questions or concerns, please don't hesitate to contact me. I am open to any work opportunities that align with my skills and interests.!
+      </p>
 
-export default ContactForm;
+      <div className="flex flex-col md:flex-row items-center gap-12 w-full max-w-5xl">
+        {/* Contact Form */}
+        <motion.div
+          initial={{ x: 50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="w-full md:w-1/2 p-8 rounded-xl shadow-lg border "
+        >
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label className="block text-gray-300 mb-1">Name</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-300 mb-1">Email</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-300 mb-1">Message</label>
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                required
+                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-blue-400 focus:outline-none h-36"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-blue-600 bg-gradient-to-r from-purple-500 py-3 rounded-lg hover:bg-blue-700 transition duration-300 font-bold text-lg"
+              disabled={loading}
+            >
+              {loading ? "Sending..." : "Send Message"}
+            </button>
+          </form>
+        </motion.div>
+
+        {/* Contact Info & Image */}
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="w-full md:w-1/2 flex flex-col gap-6 text-center md:text-left p-10 rounded-xl shadow-xl border "
+        >
+          {/* Added Image */}
+          <div className="mt-6 flex justify-center">
+            <img
+              src="/1709674937953.gif"
+              alt="Animated Contact GIF"
+              className="rounded-lg w-64 h-64 object-cover"
+            />
+          </div>
+          
+          <div className="space-y-6">
+            <div className="flex items-center gap-4">
+              <FaEnvelope className="text-blue-400 text-3xl" />
+              <p className="text-lg font-semibold">dananjayakavindu089@gmail.com</p>
+            </div>
+            <div className="flex items-center gap-4">
+              <FaPhone className="text-green-400 text-3xl" />
+              <p className="text-lg font-semibold">+94 77 872 7040</p>
+            </div>
+            <div className="flex items-center gap-4">
+              <FaMapMarkerAlt className="text-red-400 text-3xl" />
+              <p className="text-lg font-semibold">Horana, Kalutara, Sri Lanka</p>
+            </div>
+          </div>
+
+          
+        </motion.div>
+      </div>
+    </motion.div>
+  );
+}
