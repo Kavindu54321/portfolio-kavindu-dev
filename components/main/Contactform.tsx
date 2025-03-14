@@ -125,7 +125,7 @@ export default function Contact() {
             </div>
             <div className="flex items-center gap-4">
               <FaMapMarkerAlt className="text-red-400 text-3xl" />
-              <p className="text-lg font-semibold">Horana,Kalutara, Sri Lanka</p>
+              <p className="text-lg font-semibold">Horana, Kalutara, Sri Lanka</p>
             </div>
           </div>
 
