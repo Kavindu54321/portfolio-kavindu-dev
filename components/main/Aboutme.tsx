@@ -28,7 +28,7 @@ function Aboutme() {
         <Image
           src="/profile.png"
           alt="Profile Photo"
-          width={370} // Set an appropriate width
+          width={380} // Set an appropriate width
           height={400} // Set an appropriate height
           className="rounded-full shadow-lg mb-6 border-4 border-purple-500"
           priority // Helps with LCP optimization
