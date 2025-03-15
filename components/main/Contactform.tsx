@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Swal from "sweetalert2";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
@@ -45,9 +46,12 @@ export default function Contact() {
       transition={{ duration: 0.5 }}
       className="min-h-screen flex flex-col items-center justify-center text-white px-6 py-12"
     >
-      <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 text-center mb-6">Contact With Me</h1>
+      <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 text-center mb-6">
+        Contact With Me
+      </h1>
       <p className="text-gray-300 text-lg text-center max-w-2xl mb-12">
-      If you have any questions or concerns, please don't hesitate to contact me. I am open to any work opportunities that align with my skills and interests.!
+        If you have any questions or concerns, please do not hesitate to contact me. 
+        I am open to any work opportunities that align with my skills and interests!
       </p>
 
       <div className="flex flex-col md:flex-row items-center gap-12 w-full max-w-5xl">
@@ -56,7 +60,7 @@ export default function Contact() {
           initial={{ x: 50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="w-full md:w-1/2 p-8 rounded-xl shadow-lg border "
+          className="w-full md:w-1/2 p-8 rounded-xl shadow-lg border"
         >
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
@@ -103,17 +107,19 @@ export default function Contact() {
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="w-full md:w-1/2 flex flex-col gap-6 text-center md:text-left p-10 rounded-xl shadow-xl border "
+          className="w-full md:w-1/2 flex flex-col gap-6 text-center md:text-left p-10 rounded-xl shadow-xl border"
         >
-          {/* Added Image */}
+          {/* Image with Next.js Optimization */}
           <div className="mt-6 flex justify-center">
-            <img
+            <Image
               src="/1709674937953.gif"
               alt="Animated Contact GIF"
-              className="rounded-lg w-64 h-64 object-cover"
+              width={256}
+              height={256}
+              className="rounded-lg object-cover"
             />
           </div>
-          
+
           <div className="space-y-6">
             <div className="flex items-center gap-4">
               <FaEnvelope className="text-blue-400 text-3xl" />
@@ -128,8 +134,6 @@ export default function Contact() {
               <p className="text-lg font-semibold">Horana, Kalutara, Sri Lanka</p>
             </div>
           </div>
-
-          
         </motion.div>
       </div>
     </motion.div>
