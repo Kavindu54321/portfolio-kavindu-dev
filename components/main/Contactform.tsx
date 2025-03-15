@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Swal from "sweetalert2";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
@@ -7,12 +7,13 @@ import Image from "next/image";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement | null>(null); // ✅ Explicitly type formRef
 
-  async function handleSubmit(event) {
-    event.preventDefault();
+  async function handleSubmit() {
+    if (!formRef.current) return;
     setLoading(true);
-    
-    const formData = new FormData(event.target);
+
+    const formData = new FormData(formRef.current);
     formData.append("access_key", "a5fc27ac-8902-41ec-964c-b2206218864f");
 
     const json = JSON.stringify(Object.fromEntries(formData));
@@ -29,7 +30,7 @@ export default function Contact() {
 
       if (result.success) {
         Swal.fire("Success!", "Your message has been sent.", "success");
-        event.target.reset();
+        formRef.current?.reset(); // ✅ Use optional chaining to prevent errors
       } else {
         Swal.fire("Error!", "Submission failed. Try again.", "error");
       }
@@ -62,7 +63,7 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           className="w-full md:w-1/2 p-8 rounded-xl shadow-lg border"
         >
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form ref={formRef} onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}className="space-y-6">
             <div>
               <label className="block text-gray-300 mb-1">Name</label>
               <input
