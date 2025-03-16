@@ -65,9 +65,9 @@ const Projects = () => {
   };
 
   return (
-    <div className='z-[20]'>
-      <div className="p-20 mx-auto " id="projects">
-        <h1 className="text-[40px] text-center font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
+    <div className='relative z-[20]'>
+      <div className="p-20 mx-auto" id="projects">
+        <h1 className="text-4xl text-center font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-10">
           My Projects
         </h1>
         <div className="gap-20">
@@ -83,16 +83,15 @@ const Projects = () => {
             ))}
           </Slider>
         </div>
-        {showPopUp && (
-          <Popwindow
-            project={selectedProject}
-            onClosePopUp={closePopUp}
-          />
+        {showPopUp && selectedProject && (
+          <Popwindow project={selectedProject} onClosePopUp={closePopUp} />
         )}
       </div>
-        <ContactForm visible={showPopUp}/>
+      {/* Ensure ContactForm handles `visible` prop correctly */}
+      <ContactForm />
     </div>
   );
 };
+
 
 export default Projects;
