@@ -14,16 +14,15 @@ export const projectDetails = [
     },
     // Project #2
     {
-      name: 'Space Travellers',
+      name: 'future-tech-laptop-shop-web-site',
       description: [
-        'A web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions. It is built with real live data from the SpaceX API.',
-        "The web application is tailored for a company specializing in commercial and scientific space travel services, providing users with the capability to reserve rockets and participate in specific space missions. Leveraging authentic data from the SpaceX API, users can access genuine information about rocket availability and mission details. The platform offers a seamless booking experience, enabling individuals to select and reserve rockets while granting them the opportunity to join and engage in curated space missions. With a foundation rooted in real-time data from the SpaceX API, this application presents an immersive and informative environment for users keen on exploring commercial and scientific space travel opportunities.",
-      ],
-      image: '/spacetravellers.png',
-      technologies: ['Tailwind', 'JavaScript','React','Api'],
-      live: 'https://space-travelers-0cew.onrender.com/',
+        'TechFuture Laptop Shop - A modern e-commerce web app for laptops.',
+        "Built with a responsive UI using Bootstrap and a robust backend powered by PHP. Features include product listings,user-friendly navigation, and secure transactions. Perfect for showcasing and selling laptops online."],
+      image: '/project1.png',
+      technologies: ['HTML','CSS', 'JavaScript','PHP','Api','Boostrap'],
+      live: 'http://future-tech.atwebpages.com/',
       source:
-        'https://github.com/tajulafreen/Space-Travelers-HUB',
+        'https://github.com/Kavindu54321/future-tech-laptop-shop-web-site',
     },
     {
       name: 'Doctor Appointment',
