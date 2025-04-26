@@ -150,7 +150,7 @@ Github Pages:
 👤 **Kavindu Dananjaya**
 
 - GitHub: [@Kavindu](https://github.com/Kavindu54321)
-- Twitter: [@kavindu]()
+- Twitter: [@kavindudananjaya]()
 - LinkedIn: [@Kavindu](https://www.linkedin.com/in/kavindu-dananjaya-197b68233/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -177,7 +177,7 @@ If you like this project follow me on Github and give it a star to motivate buil
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
+## 🙏 Aubowan  sri lanka <a name="acknowledgements"></a>
 
 I would like to thank the Microverse Community, My stand up team and coding partners who we work tirelessly to make it possible.
 
