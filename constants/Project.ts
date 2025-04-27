@@ -43,7 +43,8 @@ export const projectDetails = [
     {
       name: 'Ceylon-Hotel-Web-Laravel-11',
       description: [
-        "A modern hotel booking web application built with Laravel 11. It features a beautiful user interface, room listings, booking management, customer contact forms, and responsive design using HTML, CSS, Bootstrap, and JavaScript. Perfect for showcasing hotel services and managing reservations online.",
+        "A modern hotel booking web application built with Laravel 11." ,
+        "It features a beautiful user interface, room listings, booking management, customer contact forms, and responsive design using HTML, CSS, Bootstrap, and JavaScript.",
       ],
       image: '/project5.PNG',
       technologies: ['HTML', 'CSS', 'JavaScript','boostrap','PHP(Laravel 11)',],
