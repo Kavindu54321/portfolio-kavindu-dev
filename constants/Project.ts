@@ -1,5 +1,6 @@
 export const projectDetails = [
-    {
+    
+  {
       name: 'Mern E-Commerce-Store',
       description: [
   
@@ -51,6 +52,17 @@ export const projectDetails = [
       live: 'https://github.com/Kavindu54321/Ceylon-Hotel-Web-Laravel-11',
       source:
         'https://github.com/Kavindu54321/Ceylon-Hotel-Web-Laravel-11',
+    },
+    {
+      name: 'Biztheme-website-php',
+      description: [
+        "I created Biztheme-website using HTML, CSS, JavaScript, PHP, and MySQL. It’s a modern, responsive landing page designed for businesses, featuring dynamic content and user-friendly interaction powered by a full-stack web development approach.",
+    ],
+      image: '/project6.PNG',
+      technologies: ['html','css','JavaScript','php','mysql'],
+      live: 'landing.biztheme.com/',
+      source:
+        'https://github.com/Kavindu54321/biztheme-website-php-',
     },
     
   ];
